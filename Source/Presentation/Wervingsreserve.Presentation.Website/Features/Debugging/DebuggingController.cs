@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Wervingsreserve.Presentation.Website.Features.Debugging
 {
+    [Produces("application/json")]
     public class DebuggingController : Controller
     {
-        public IActionResult Index()
-            => View();        
+        [HttpGet]
+        public IActionResult Version()
+          => Ok("1.0.0");
     }
 }

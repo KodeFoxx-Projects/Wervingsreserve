@@ -1,27 +1,28 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Wervingsreserve.Presentation.Website.Features.Debugging;
 
 namespace Wervingsreserve.Presentation.Website
 {
     public class Startup
-    {        
-        public void ConfigureServices(IServiceCollection services) {
-            services.AddMvc().AddFeatureFolders();
-        }
+    {
+        public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public Startup(IConfiguration configuration)
+          => Configuration = configuration;                
+        
+        public void ConfigureServices(IServiceCollection services)
+          => services.AddMvc().AddFeatureFolders();
+                
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+            if (env.IsDevelopment())            
+                app.UseDeveloperExceptionPage();            
 
+            app.UseDefaultFiles();
             app.UseStaticFiles();
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc();
         }
     }
 }
