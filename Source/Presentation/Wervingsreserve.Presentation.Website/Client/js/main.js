@@ -1,4 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import 'jquery';
-import 'popper.js/dist/popper.min.js';
+import 'popper.js/dist/popper.js';
 import 'bootstrap';
