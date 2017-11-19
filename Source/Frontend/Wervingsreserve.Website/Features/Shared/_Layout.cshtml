@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wervingsreserve</title>
+    <link rel="stylesheet" href="~/dist/styles.css" />
+</head>
+<body>
+
+<header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Wervingsreserve</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+                </li>                
+            </ul>            
+        </div>
+    </nav>
+</header>
+    
+<!-- Begin page content -->
+<main role="main" class="fluid-container">    
+    @RenderBody()
+</main>
+
+<!-- Sticky footer -->
+<footer class="footer">
+    <div class="fluid-container d-flex justify-content-between">
+        <span class="text-muted">Wervingsreserve &copy; Elegast @DateTime.Now.Year.ToString().</span>
+        <span class="text-muted">Powered by <a href="https://www.facebook.com/kodefoxx">KodeFoxx</a>.</span>
+    </div>
+</footer>
+    
+<!-- Scripts -->
+<script src="~/dist/bundle.js"></script>
+@RenderSection("Scripts", required: false)
+</body>
+</html>

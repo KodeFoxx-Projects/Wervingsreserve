@@ -1,20 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2006
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7AC88514-5B3B-47D6-937A-2B859B6F7724}"
-	ProjectSection(SolutionItems) = preProject
-		..\.gitignore = ..\.gitignore
-		..\LICENSE = ..\LICENSE
-		..\README.md = ..\README.md
-	EndProjectSection
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{A0C99DD3-5482-405E-B2EA-C9E12F79CE8B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{8788E14B-C929-4406-AAFF-FDCA5AA74FF1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{16CF027F-EE95-4117-BCEE-1645CC6D9560}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{F679C41D-8243-47DF-840C-25FE07C37A09}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wervingsreserve.Website", "Frontend\Wervingsreserve.Website\Wervingsreserve.Website.csproj", "{6D4DEBAB-AD39-4648-8E59-0B5175BA06C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wervingsreserve.Presentation.Website", "Presentation\Wervingsreserve.Presentation.Website\Wervingsreserve.Presentation.Website.csproj", "{80AD765B-695B-411D-830E-1807CA4FCF48}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{5379C09F-5D04-4D84-8102-2C195AEF25D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wervingsreserve.Backend", "Backend\Wervingsreserve.Backend\Wervingsreserve.Backend.csproj", "{A02D0D0D-BC9F-4D61-9134-AF81484B3683}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,19 +19,25 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{80AD765B-695B-411D-830E-1807CA4FCF48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{80AD765B-695B-411D-830E-1807CA4FCF48}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{80AD765B-695B-411D-830E-1807CA4FCF48}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{80AD765B-695B-411D-830E-1807CA4FCF48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D4DEBAB-AD39-4648-8E59-0B5175BA06C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D4DEBAB-AD39-4648-8E59-0B5175BA06C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D4DEBAB-AD39-4648-8E59-0B5175BA06C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D4DEBAB-AD39-4648-8E59-0B5175BA06C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A02D0D0D-BC9F-4D61-9134-AF81484B3683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A02D0D0D-BC9F-4D61-9134-AF81484B3683}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A02D0D0D-BC9F-4D61-9134-AF81484B3683}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A02D0D0D-BC9F-4D61-9134-AF81484B3683}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{F679C41D-8243-47DF-840C-25FE07C37A09} = {8788E14B-C929-4406-AAFF-FDCA5AA74FF1}
-		{80AD765B-695B-411D-830E-1807CA4FCF48} = {F679C41D-8243-47DF-840C-25FE07C37A09}
+		{16CF027F-EE95-4117-BCEE-1645CC6D9560} = {A0C99DD3-5482-405E-B2EA-C9E12F79CE8B}
+		{6D4DEBAB-AD39-4648-8E59-0B5175BA06C6} = {16CF027F-EE95-4117-BCEE-1645CC6D9560}
+		{5379C09F-5D04-4D84-8102-2C195AEF25D5} = {A0C99DD3-5482-405E-B2EA-C9E12F79CE8B}
+		{A02D0D0D-BC9F-4D61-9134-AF81484B3683} = {5379C09F-5D04-4D84-8102-2C195AEF25D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7DE97D36-2853-4E31-81AB-CE4D0E298D86}
+		SolutionGuid = {C5B22596-F949-45C6-BBB1-5D4E8A1BC86A}
 	EndGlobalSection
 EndGlobal
