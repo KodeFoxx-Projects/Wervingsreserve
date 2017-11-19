@@ -25,6 +25,10 @@ body {
 
 .jumbotron {
     padding: 1em !important;
+    margin-bottom: 0;
+}
+.jumbotron-search-kaart {
+    margin-top: 8px;
 }
 
 body > .fluid-container {

@@ -6,3 +6,4 @@ require("../node_modules/bootstrap/dist/js/bootstrap.min.js");
 // CSS
 // require("../node_modules/bootstrap/dist/css/bootstrap.min.css");
 require("../node_modules/bootswatch/dist/cosmo/bootstrap.min.css");
+require("../node_modules/font-awesome/css/font-awesome.min.css");
