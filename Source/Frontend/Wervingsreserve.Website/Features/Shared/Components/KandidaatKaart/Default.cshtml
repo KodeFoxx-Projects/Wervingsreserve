@@ -1,13 +1,18 @@
 ﻿@using Wervingsreserve.Website.Features.Shared.Components.KandidaatKaart
 @model KandidaatKaart
-
-<div class="jumbotron jumbotron-person-details">
+    
+<div class="jumbotron jumbotron-person-details">    
     <div id="person-details" class="fluid-container d-flex justify-content-start">
-        <img id="person-face" src="@Model.Kandidaat.AfbeeldingsBron" />
+        <img id="person-face" src="@Model.Kandidaat.AfbeeldingsBron"/>
         <div>
             <h1 id="person-name">@Model.Kandidaat.VolledigeNaam</h1>
             <h2 id="person-degree">@Model.Kandidaat.Diplomas.FirstOrDefault()</h2>
             <h3 id="person-personalia">@Model.Kandidaat.Leeftijd, @Model.Kandidaat.Geslacht</h3>
         </div>
+        @if (Model.ToonDetailsLink) {
+            <div class="ml-auto mt-auto">
+                <a class="btn btn-primary" href="~/kandidaat/@Model.Kandidaat.Slug">Toon details...</a>
+            </div>
+        }
     </div>
 </div>
