@@ -36,7 +36,7 @@ namespace Wervingsreserve.Website
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Start}/{action=Start}/{id?}");
+                    template: "{controller=Kandidaat}/{action=AlleKandidaten}/{id?}");
             });
         }
     }
