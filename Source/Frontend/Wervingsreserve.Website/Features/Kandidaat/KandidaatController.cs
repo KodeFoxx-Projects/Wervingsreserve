@@ -29,6 +29,6 @@ namespace Wervingsreserve.Website.Features.Kandidaat
 
         [Route("{volledigeNaam}")]
         public IActionResult Kandidaat(string volledigeNaam)
-            => View(_fakeKandidaten.FirstOrDefault(k => k.VolledigeNaam.Equals(volledigeNaam.Replace("+", " "))));
+            => View(_fakeKandidaten.FirstOrDefault(k => k.ConverteerVolledigeNaamNaarSlug(volledigeNaam) == k.Slug));
     }
 }
