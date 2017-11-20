@@ -12,6 +12,7 @@
     "bootswatch": "^4.0.0-beta.2",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
+    "moment": "^2.19.2",
     "popper.js": "^1.12.9"
   },
   "devDependencies": {

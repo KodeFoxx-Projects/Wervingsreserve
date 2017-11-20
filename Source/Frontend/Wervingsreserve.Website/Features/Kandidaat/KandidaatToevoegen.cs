@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Wervingsreserve.Website.Features.Kandidaat
 {
@@ -10,7 +11,9 @@ namespace Wervingsreserve.Website.Features.Kandidaat
         public string Achternaam { get; set; }
         [Required]
         [EmailAddress]
-        public string EmailAdres { get; set; }
+        public string Email { get; set; }
+        [Required]
+        public DateTime Geboortedatum { get; set; }
         [Required]
         public string Geslacht { get; set; }
     }
