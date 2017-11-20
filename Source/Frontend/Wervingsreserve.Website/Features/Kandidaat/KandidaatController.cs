@@ -7,7 +7,7 @@ namespace Wervingsreserve.Website.Features.Kandidaat
     [Route("[controller]")]
     public class KandidaatController : Controller
     {
-        private List<Kandidaat> _fakeKandidaten = new List<Kandidaat> {
+        private static List<Kandidaat> _fakeKandidaten = new List<Kandidaat> {
             new Kandidaat {
                 AfbeeldingsBron = "https://loremflickr.com/g/400/400/face/all",
                 VolledigeNaam = "Jonas Dierckx",
@@ -52,11 +52,32 @@ namespace Wervingsreserve.Website.Features.Kandidaat
             },
         };
 
+        [HttpGet]
         [Route("alle")]
         public IActionResult AlleKandidaten(string volledigeNaam) => View(_fakeKandidaten);
 
+        [HttpGet]
         [Route("{volledigeNaam}")]
         public IActionResult Kandidaat(string volledigeNaam)
             => View(_fakeKandidaten.FirstOrDefault(k => k.ConverteerVolledigeNaamNaarSlug(volledigeNaam) == k.Slug));
+
+        [HttpGet]
+        public IActionResult Toevoegen()
+            => View(new KandidaatToevoegen());
+
+        [HttpPost]
+        public IActionResult Toevoegen(KandidaatToevoegen toeTeVoegenKandidaat) {
+            if (ModelState.IsValid) {
+                _fakeKandidaten.Add(new Kandidaat {
+                    VolledigeNaam = $"{toeTeVoegenKandidaat.Voornaam} {toeTeVoegenKandidaat.Achternaam}",
+                    Geslacht = toeTeVoegenKandidaat.Geslacht,
+                    Diplomas = new List<string>()
+                });
+
+                return RedirectToAction("AlleKandidaten");
+            }
+
+            return View(toeTeVoegenKandidaat);
+        }
     }
 }

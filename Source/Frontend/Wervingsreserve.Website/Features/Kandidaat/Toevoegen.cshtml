@@ -1,0 +1,49 @@
+﻿@using Wervingsreserve.Website.Features.Kandidaat
+@model KandidaatToevoegen
+
+<vc:header title="Kandidaat toevoegen"></vc:header>
+
+<div class="container-fluid">
+    @using (Html.BeginForm("Toevoegen", "Kandidaat", FormMethod.Post)) 
+    {
+        <div style="margin: 8px; padding-top: 8px;">
+            <div class="row">
+                <div class="col-lg-4 col-md-12" style="padding-top: 8px;">
+                    <h3><i class="fa fa-id-card"></i> Contactgegevens
+                    </h3>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Voornaam, "Voornaam")
+                        @Html.TextBoxFor(x => x.Voornaam, new { @class="form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.Achternaam, "Achternaam")
+                        @Html.TextBoxFor(x => x.Achternaam, new { @class="form-control" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(x => x.EmailAdres, "E-mail Adres")
+                        @Html.TextBoxFor(x => x.EmailAdres, new { @class="form-control", type = "email" })
+                    </div>
+                    <div class="form-group">
+                        @{
+                            var geslactTypes = new List<SelectListItem> {
+                                new SelectListItem {Text = "Man"}, new SelectListItem {Text = "Vrouw"}
+                            };
+                        }
+                        @Html.LabelFor(x => x.Geslacht, "Geslacht")
+                        @Html.DropDownListFor(x => x.Geslacht, geslactTypes, new { @class="form-control" })
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-12" style="padding-top: 8px;">
+                    <h3><i class="fa fa-book"></i> Documenten</h3>
+                    <small>todo</small>
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-lg-12" style="padding-top: 8px;">
+                    <button type="submit" class="btn btn-primary">Toevoegen</button>
+                </div>
+            </div>
+        </div>
+    }
+</div>
