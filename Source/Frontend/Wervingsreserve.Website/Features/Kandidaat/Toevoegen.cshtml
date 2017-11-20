@@ -13,15 +13,18 @@
                     </h3>
                     <div class="form-group">
                         @Html.LabelFor(x => x.Voornaam, "Voornaam")
-                        @Html.TextBoxFor(x => x.Voornaam, new { @class="form-control" })
+                        @Html.TextBoxFor(x => x.Voornaam, new { @class="form-control" })                        
+                        @Html.ValidationMessageFor(x => x.Voornaam, "Gelieve een voornaam op te geven", new { @class="text-danger" })
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(x => x.Achternaam, "Achternaam")
                         @Html.TextBoxFor(x => x.Achternaam, new { @class="form-control" })
+                        @Html.ValidationMessageFor(x => x.Achternaam, "Gelieve een achternaam op te geven", new { @class="text-danger" })
                     </div>
                     <div class="form-group">
                         @Html.LabelFor(x => x.EmailAdres, "E-mail Adres")
-                        @Html.TextBoxFor(x => x.EmailAdres, new { @class="form-control", type = "email" })
+                        @Html.TextBoxFor(x => x.EmailAdres, new { @class="form-control", type = "email" })                        
+                        @Html.ValidationMessageFor(x => x.EmailAdres, "Gelieve een e-mailadres op te geven", new { @class="text-danger" })
                     </div>
                     <div class="form-group">
                         @{
@@ -31,6 +34,7 @@
                         }
                         @Html.LabelFor(x => x.Geslacht, "Geslacht")
                         @Html.DropDownListFor(x => x.Geslacht, geslactTypes, new { @class="form-control" })
+                        @Html.ValidationMessageFor(x => x.Geslacht)                        
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-12" style="padding-top: 8px;">

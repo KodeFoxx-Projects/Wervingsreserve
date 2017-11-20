@@ -38,3 +38,11 @@ body > .fluid-container {
     padding-right: 15px;
     padding-left: 15px;
 }
+
+.field-validation-valid {
+    display: none;
+}
+
+.validation-summary-valid {
+    display: none;
+}
