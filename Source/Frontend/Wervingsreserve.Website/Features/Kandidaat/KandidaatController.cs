@@ -68,13 +68,14 @@ namespace Wervingsreserve.Website.Features.Kandidaat
         [HttpPost]
         public IActionResult Toevoegen(KandidaatToevoegen toeTeVoegenKandidaat) {
             if (ModelState.IsValid) {
-                _fakeKandidaten.Add(new Kandidaat {
+                var kandidaat = new Kandidaat {
                     VolledigeNaam = $"{toeTeVoegenKandidaat.Voornaam} {toeTeVoegenKandidaat.Achternaam}",
                     Geslacht = toeTeVoegenKandidaat.Geslacht,
                     Diplomas = new List<string>()
-                });
+                };
+                _fakeKandidaten.Add(kandidaat);
 
-                return RedirectToAction("AlleKandidaten");
+                return RedirectToAction(kandidaat.Slug, "Kandidaat");
             }
 
             return View(toeTeVoegenKandidaat);
